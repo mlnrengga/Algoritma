@@ -42,7 +42,8 @@ public class Pemilihan {
                 System.out.println("ANDA TIDAK LULUS");
             }
           }  else {
-            System.out.println("========================\n" + "=================\n" + "Nilai Tidak Valid\n"+ "=================\n");
+            System.out.println("========================\n" + "=================\n" + "Nilai Tidak Valid\n"+ "=================\n"
+            );
           }
           sc15.close();
     }
