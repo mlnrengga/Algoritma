@@ -2,7 +2,8 @@ package Pertemuan_2;
 
 public class Buku15 {
     String judul, pengarang;
-    int halaman, stok, harga;
+    int halaman, stok, harga, hargaTotal;
+    double totalDiskon, diskon;
 
     void tampilInformasi() {
         System.out.println("Judul: " + judul);
@@ -12,11 +13,11 @@ public class Buku15 {
         System.out.println("Harga: Rp " + harga);
     }
 
-    public Buku15(){
+    public Buku15() {
 
     }
 
-    public Buku15(String jud, String pg, int hal, int stok, int har){
+    public Buku15(String jud, String pg, int hal, int stok, int har) {
         judul = jud;
         pengarang = pg;
         halaman = hal;
@@ -39,4 +40,26 @@ public class Buku15 {
         harga = hrg;
     }
 
+    void hitungHargaTotal(int hrg, int jml) {
+        hargaTotal = harga * jml;
+    }
+
+    void hitungDiskon() {
+        if (hargaTotal > 150000) {
+            System.err.println("Selamat anda mendapatkan diskon sebesar 12% dari toko kami");
+            diskon = 0.12;
+        } else if (hargaTotal >= 75000 && hargaTotal <= 150000) {
+            System.err.println("Selamat anda mendapatkan diskon sebesar 5% dari toko kami");
+            diskon = 0.05;
+        } else if (hargaTotal < 75000) {
+            System.out.println("Tidak ada Diskon");
+        }
+    }
+
+    void hitungHargaBayar() {
+        totalDiskon = hargaTotal * diskon;
+        System.out.println("Total potongan harga yang didapat: " + totalDiskon);
+        hargaTotal -= totalDiskon;
+        System.out.println("Total harga yang harus dibayar: " + hargaTotal);
+    }
 }

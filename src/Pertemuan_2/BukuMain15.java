@@ -12,7 +12,10 @@ public class BukuMain15 {
         buku1.tampilInformasi();
         buku1.terjual(5);
         buku1.gantiHarga(60000);
+        buku1.hitungHargaTotal(60000, 3);
+        buku1.hitungDiskon();
         buku1.tampilInformasi();
+        buku1.hitungHargaBayar();
 
         Buku15 bk2 = new Buku15("Self reward", "Maheera Ayesha", 160, 29, 59000);
         bk2.terjual(11);
