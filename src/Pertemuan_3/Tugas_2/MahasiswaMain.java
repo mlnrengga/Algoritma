@@ -4,10 +4,10 @@ import java.util.Scanner;
 public class MahasiswaMain {
     public static void main(String[] args) {
         Scanner sc14 = new Scanner(System.in);
-        Mahasiswa[] mahasiswa = new Mahasiswa[4];
+        Mahasiswa[] mahasiswa = new Mahasiswa[3];
 
-        for (int i = 1; i < 4; i++){
-            System.out.println("Masukkan data mahasiswa ke-" + i);
+        for (int i = 0; i < 3; i++){
+            System.out.println("Masukkan data mahasiswa ke-" + (i+1));
             System.out.print("Masukkan nama: ");
             String nama = sc14.next();
             System.out.print("Masukkan nim: ");
@@ -20,12 +20,16 @@ public class MahasiswaMain {
         } 
         
         System.out.println("");
-        for (int i = 1; i < 4; i++){
-            System.out.println("Data mahasiswa ke-" + i);
+        for (int i = 0; i < 3; i++){
+            System.out.println("Data mahasiswa ke-" + i+1);
             System.out.println("Nama: " +  mahasiswa[i].nama);
             System.out.println("NIM: " + mahasiswa[i].nim);
             System.out.println("Jenis kelamin: " + mahasiswa[i].kelamin);
             System.out.println("Nilai IPK: " + mahasiswa[i].ipk);
-        } sc14.close();
-    } 
+        } 
+        
+        System.out.println("");
+        Mahasiswa.printRataIPK(mahasiswa);
+        Mahasiswa.printIPKTerbesar(mahasiswa);
+    }
 }
