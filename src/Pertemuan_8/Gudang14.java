@@ -63,6 +63,33 @@ public class Gudang14 {
         }
     }
 
+    public Barang14 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang14 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah: " +
+                    barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
+    public Barang14 cariBarang(int kode) {
+        if (!cekKosong()) {
+            for (int i = 0; i <= top; i++) {
+                if (tumpukan[i].kode == kode) {
+                    Barang14 barangDicari = tumpukan[i];
+                    return barangDicari;
+                }
+            }
+            return null;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
     public void tampilkanBarang() {
         if (!cekKosong()) {
             System.out.println("Rincian tumpukan barang digudang: ");

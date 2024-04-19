@@ -14,7 +14,9 @@ public class Utama14 {
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
             System.out.println("4. Lihat barang teratas");
-            System.out.println("5. Keluar");
+            System.out.println("5. Lihat Barang Terbawah");
+            System.out.println("6. Cari Barang");
+            System.out.println("7. Keluar");
             System.out.print("Pilih operasi : ");
             int pilihan = sc14.nextInt();
             sc14.nextLine();
@@ -41,6 +43,26 @@ public class Utama14 {
                     gudang.lihatBarangTeratas();
                     break;
                 case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+                case 6:
+                    System.out.print("\nMasukkan kode barang yang dicari: ");
+                    int kodeCari = sc14.nextInt();
+                    Barang14 barangDicari = gudang.cariBarang(kodeCari);
+                    if (barangDicari != null) {
+                        System.out.println("Barang ada di dalam gudang.");
+                        System.out.println("Kode barang : " +
+                                barangDicari.kode);
+                        System.out.println("Nama barang : " +
+                                barangDicari.nama);
+                        System.out.println("Kategori : " +
+                                barangDicari.kategori);
+                    } else {
+                        System.out.println("Barang tidak ada di dalam gudang.");
+                    }
+                    break;
+
+                case 7:
                     System.exit(0);
                 default:
                     System.out.println("Pilihan tidak valid. Silahkan coba lagi");
