@@ -1,4 +1,5 @@
 package Pertemuan_8;
+
 import java.util.Scanner;
 
 public class Utama14 {
@@ -6,7 +7,7 @@ public class Utama14 {
         Gudang14 gudang = new Gudang14(7);
         Scanner sc14 = new Scanner(System.in);
 
-        while (true){
+        while (true) {
             System.out.println("\nMenu");
             System.out.println("1. Tambah barang");
             System.out.println("2. Ambil barang");
@@ -14,7 +15,7 @@ public class Utama14 {
             System.out.println("4. Keluar");
             System.out.print("Pilih operasi : ");
             int pilihan = sc14.nextInt();
-            sc14.nextLine();    
+            sc14.nextLine();
 
             switch (pilihan) {
                 case 1:
@@ -35,9 +36,9 @@ public class Utama14 {
                     gudang.tampilkanBarang();
                     break;
                 case 4:
-                    break;  
+                    break;
                 default:
-                System.out.println("Pilihan tidak valid. Silahkan coba lagi");
+                    System.out.println("Pilihan tidak valid. Silahkan coba lagi");
             }
         }
     }

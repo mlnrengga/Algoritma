@@ -6,6 +6,7 @@ public class Gudang14 {
     int top;
 
     public Gudang14(int kapasitas) {
+
         size = kapasitas;
         tumpukan = new Barang14[size];
         top = -1;
@@ -20,6 +21,7 @@ public class Gudang14 {
     }
 
     public boolean cekPenuh() {
+
         if (top == size - 1) {
             return true;
         } else {
@@ -29,6 +31,7 @@ public class Gudang14 {
 
     public void tambahBarang(Barang14 brg) {
         if (!cekPenuh()) {
+
             top++;
             tumpukan[top] = brg;
             System.out.println("Barang " + brg.nama + " berhasil ditambahkan ke gudang");
@@ -39,6 +42,7 @@ public class Gudang14 {
 
     public Barang14 ambilBarang() {
         if (!cekKosong()) {
+
             Barang14 delete = tumpukan[top];
             top--;
             System.out.println("Barang " + delete.nama + " diambil dari gudang");
@@ -51,6 +55,7 @@ public class Gudang14 {
 
     public Barang14 lihatBarangTeratas() {
         if (!cekKosong()) {
+
             Barang14 barangTeratas = tumpukan[top];
             System.out.println("Barang teratas " + barangTeratas.nama);
             return barangTeratas;
