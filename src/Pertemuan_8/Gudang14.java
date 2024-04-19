@@ -31,7 +31,6 @@ public class Gudang14 {
 
     public void tambahBarang(Barang14 brg) {
         if (!cekPenuh()) {
-
             top++;
             tumpukan[top] = brg;
             System.out.println("Barang " + brg.nama + " berhasil ditambahkan ke gudang");
@@ -55,7 +54,6 @@ public class Gudang14 {
 
     public Barang14 lihatBarangTeratas() {
         if (!cekKosong()) {
-
             Barang14 barangTeratas = tumpukan[top];
             System.out.println("Barang teratas " + barangTeratas.nama);
             return barangTeratas;
