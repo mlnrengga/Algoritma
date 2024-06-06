@@ -38,9 +38,9 @@ public class DoubleLinkedList14 {
         }
     }
 
-    public void add(int data, int index, int jarak) throws Exception {
+    public void add(int item, int jarak, int index) throws Exception {
         if (isEmpty()) {
-            addFirst(data, jarak);
+            addFirst(item, jarak);
         } else if (index < 0 || index > size) {
             throw new Exception("Nilai indeks diluar batas");
         } else {
@@ -51,11 +51,13 @@ public class DoubleLinkedList14 {
                 i++;
             }
             if (current.prev == null) {
-                Node14 newNode14 = new Node14(null, index, i, current);
+                Node14 newNode14 = new Node14(null, item, jarak, current);
                 current.prev = newNode14;
                 head = newNode14;
             } else {
-                Node14 newNode14 = new Node14(current, index, i, current);
+                Node14 newNode14 = new Node14(current.prev, item, jarak, current);
+                newNode14.prev = current.prev;
+                newNode14.next = current;
                 current.prev.next = newNode14;
                 current.prev = newNode14;
             }

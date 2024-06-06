@@ -15,28 +15,29 @@ public class Graph14 {
     public void addEdge(int asal, int tujuan, int jarak) {
         list[asal].addFirst(tujuan, jarak);
     }
-    //list[tujuan].addFirst(asal, jarak); (undirected graph)
+    // list[tujuan].addFirst(asal, jarak); (undirected graph)
 
     public void degree(int asal) throws Exception {
         int k, totalIn = 0, totalOut = 0;
         for (int i = 0; i < vertex; i++) {
-            //inDegree
+            // inDegree
             for (int j = 0; j < list[i].size(); j++) {
                 if (list[i].get(j) == asal) {
                     totalIn++;
                 }
             }
-            //outDegree
+            // outDegree
             for (k = 0; k < list[asal].size(); k++) {
                 list[asal].get(k);
             }
             totalOut = k;
         }
-        System.out.println("InDegree dari Gedung " + (char) ('A' +asal) + ": " + totalIn);
+        System.out.println("InDegree dari Gedung " + (char) ('A' + asal) + ": " + totalIn);
         System.out.println("OutDegree dari Gedung " + (char) ('A' + asal) + ": " + totalOut);
         System.out.println("Degree dari Gedung " + (char) ('A' + asal) + ": " + (totalIn + totalOut));
     }
-    //System.out.println("Degree dari Gedung " + (char) ('A' + asal) + ": " + List[asal].size());  (undirected graph)
+    // System.out.println("Degree dari Gedung " + (char) ('A' + asal) + ": " +
+    // List[asal].size()); (undirected graph)
 
     public void removeEdge(int asal, int tujuan) throws Exception {
         for (int i = 0; i < vertex; i++) {
@@ -65,5 +66,15 @@ public class Graph14 {
             }
         }
         System.out.println("");
+    }
+
+    public void checkPath(int asal, int tujuan) throws Exception {
+        for (int i = 0; i < list[asal].size(); i++) {
+            if (list[asal].get(i) == tujuan) {
+                System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " bertetangga");
+                return;
+            } 
+        }
+        System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " tidak bertetangga");
     }
 }
